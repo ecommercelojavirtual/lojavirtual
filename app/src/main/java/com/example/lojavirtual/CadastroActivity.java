@@ -66,14 +66,12 @@ public class CadastroActivity extends AppCompatActivity {
         if (new_repitasenha.getText().length() == 0) {
             new_senha.setError("Repita Senha é um campo Obrigatório!");
         } else {
-            if (new_repitasenha == new_senha) {
-                //inserir senha no banco
-            }else{
+            if (!new_repitasenha.equals(new_senha)) {
                 new_repitasenha.setError("As Senhas Devem ser Iguais!");
             }
         }
         final EditText campo_cpf = (EditText) findViewById(R.id.campo_cpf);
-        campo_cpf.addTextChangedListener(Mask.insert("###.###.###-##", campo_cpf));
+        //campo_cpf.addTextChangedListener(Mask.insert("###.###.###-##", campo_cpf));
 
         final EditText campo_email = (EditText) findViewById(R.id.campo_email);
 
