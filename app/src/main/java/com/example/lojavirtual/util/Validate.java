@@ -2,6 +2,7 @@ package com.example.lojavirtual.util;
 
 import android.text.Editable;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 
@@ -30,7 +31,7 @@ public class Validate {
         return false;
     }
     public static boolean validateCPF(String CPF) {
-        CPF = Mask.unmask(CPF);
+        //CPF = Mask.unmask(CPF);
         if (CPF.equals("00000000000") || CPF.equals("11111111111")
                 || CPF.equals("22222222222") || CPF.equals("33333333333")
                 || CPF.equals("44444444444") || CPF.equals("55555555555")
@@ -78,7 +79,7 @@ public class Validate {
         if (TextUtils.isEmpty(txtEmail)) {
             return false;
         } else {
-            return android.util.Patterns.EMAIL_ADDRESS.matcher(txtEmail).matches();
+            return Patterns.EMAIL_ADDRESS.matcher(txtEmail).matches();
         }
     }
 
